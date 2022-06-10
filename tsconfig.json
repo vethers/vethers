@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./types",
     "target": "es2017",
     "module": "esnext",
     "lib": ["esnext"],

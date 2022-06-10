@@ -1,19 +1,56 @@
 {
   "name": "@vethers/hooks",
   "version": "0.0.3",
-  "description": "",
-  "license": "MIT",
+  "description": "Vue Hooks for Ethereum",
   "author": "MuRong <admin@imuboy.cn>",
+  "license": "MIT",
+  "homepage": "https://github.com/vethers/vethers#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vethers/vethers.git"
-  },
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "url": "git+https://github.com/vethers/vethers.git",
+    "directory": "packages/hooks"
   },
   "bugs": {
     "url": "https://github.com/vethers/vethers/issues"
   },
-  "homepage": "https://github.com/vethers/vethers#readme"
+  "keywords": [
+    "vue",
+    "vue-hooks",
+    "ethers"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.cjs",
+      "import": "./index.mjs"
+    },
+    "./*": "./*",
+    "./metadata": {
+      "types": "./metadata.d.ts",
+      "require": "./metadata.cjs",
+      "import": "./metadata.mjs"
+    }
+  },
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "unpkg": "./index.iife.min.js",
+  "jsdelivr": "./index.iife.min.js",
+  "types": "./index.d.ts",
+  "peerDependencies": {
+    "@vue/composition-api": "^1.2.0",
+    "vue": "^2.6.0 || ^3.2.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    },
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@vethers/core": "workspace:*",
+    "vue-demi": "*"
+  }
 }
