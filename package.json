@@ -20,6 +20,9 @@
   "scripts": {
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
+    "docs:dev": "vitepress dev packages --open",
+    "docs:build": "vitepress build packages",
+    "docs:serve": "vitepress serve packages",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "nr build",
@@ -54,7 +57,9 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.7.3",
     "unbuild": "^0.7.4",
+    "unocss": "^0.38.2",
     "vite": "^2.9.9",
+    "vitepress": "1.0.0-alpha.1",
     "vitest": "^0.12.9",
     "vue": "^3.2.31"
   },
