@@ -7,6 +7,9 @@ titleTemplate: Vue Hooks for Ethereum
 hero:
   name: Vethers
   text: Vue Hooks for Ethereum
+  image: 
+    src: /logo.svg
+    alt: vethers logo
   actions:
     - theme: brand
       text: Get Started
