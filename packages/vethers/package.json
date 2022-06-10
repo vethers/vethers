@@ -1,0 +1,19 @@
+{
+  "name": "vethers",
+  "version": "0.0.3",
+  "description": "",
+  "license": "MIT",
+  "author": "MuRong <admin@imuboy.cn>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vethers/vethers.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vethers/vethers/issues"
+  },
+  "homepage": "https://github.com/vethers/vethers#readme"
+}
