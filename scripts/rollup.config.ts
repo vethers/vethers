@@ -25,6 +25,7 @@ const dtsPlugin = [
 const externals = [
   'vue-demi',
   '@vethers/core',
+  '@wagmi/core',
 ]
 
 const esbuildMinifer = (options: ESBuildOptions) => {
@@ -36,7 +37,7 @@ const esbuildMinifer = (options: ESBuildOptions) => {
   }
 }
 
-for (const { globals, name, external, iife, build, cjs, mjs, dts, target } of packages) {
+for (const { globals, name, external, iife, build, cjs, mjs, dts, target, display } of packages) {
   if (build === false)
     continue
 
@@ -46,7 +47,7 @@ for (const { globals, name, external, iife, build, cjs, mjs, dts, target } of pa
     ...(globals || {}),
   }
 
-  const iifeName = 'Vethers'
+  const iifeName = display
   const functionNames = ['index']
 
   for (const fn of functionNames) {

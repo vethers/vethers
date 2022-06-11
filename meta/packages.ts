@@ -23,9 +23,11 @@ export const packages: PackageManifest[] = [
   {
     name: 'core',
     display: 'Vethers',
+    iife: false,
   },
   {
     name: 'hooks',
     display: 'VethersHooks',
+    iife: false,
   },
 ]

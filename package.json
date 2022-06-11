@@ -68,7 +68,8 @@
       "electron"
     ],
     "overrides": {
-      "vue-demi": "0.12.5"
+      "vue-demi": "0.12.5",
+      "ethers": "5.6.8"
     }
   },
   "lint-staged": {
