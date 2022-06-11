@@ -1,6 +1,6 @@
 {
   "name": "@vethers/client",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Vue Hooks for Ethereum",
   "author": "MuRong <admin@imuboy.cn>",
   "license": "MIT",

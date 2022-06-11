@@ -3,7 +3,7 @@ import { readJSONSync } from 'fs-extra'
 
 const { version: oldVersion } = readJSONSync('package.json')
 
-execSync('npx bumpp', { stdio: 'inherit' })
+execSync('npx bumpp package.json packages/*/package.json', { stdio: 'inherit' })
 
 const { version } = readJSONSync('package.json')
 
