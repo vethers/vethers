@@ -50,7 +50,7 @@
     }
   },
   "dependencies": {
-     "@wagmi/core": "0.3.7",
+    "@wagmi/core": "0.3.7",
     "ethers": "*",
     "vue-demi": "*"
   }
