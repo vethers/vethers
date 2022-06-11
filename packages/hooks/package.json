@@ -24,12 +24,6 @@
       "types": "./index.d.ts",
       "require": "./index.cjs",
       "import": "./index.mjs"
-    },
-    "./*": "./*",
-    "./metadata": {
-      "types": "./metadata.d.ts",
-      "require": "./metadata.cjs",
-      "import": "./metadata.mjs"
     }
   },
   "main": "./index.cjs",
@@ -50,6 +44,7 @@
     }
   },
   "dependencies": {
+    "@vethers/client": "workspace:*",
     "@vethers/core": "workspace:*",
     "vue-demi": "*"
   }

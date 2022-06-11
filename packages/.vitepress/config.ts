@@ -75,7 +75,7 @@ function sidebarHooks() {
   for (const dir of dirs) {
     const dirPath = join(hooksPath, dir)
     const isDirectory = statSync(dirPath).isDirectory()
-    if (isDirectory) {
+    if (isDirectory && !dir.indexOf('use')) {
       sliebars.push({
         text: dir,
         link: `/hooks/${dir}/index.html`,

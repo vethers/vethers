@@ -1,5 +1,5 @@
 {
-  "name": "@vethers/core",
+  "name": "@vethers/client",
   "version": "0.0.3",
   "description": "Vue Hooks for Ethereum",
   "author": "MuRong <admin@imuboy.cn>",
@@ -8,7 +8,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vethers/vethers.git",
-    "directory": "packages/core"
+    "directory": "packages/hooks"
   },
   "bugs": {
     "url": "https://github.com/vethers/vethers/issues"
@@ -24,6 +24,12 @@
       "types": "./index.d.ts",
       "require": "./index.cjs",
       "import": "./index.mjs"
+    },
+    "./*": "./*",
+    "./metadata": {
+      "types": "./metadata.d.ts",
+      "require": "./metadata.cjs",
+      "import": "./metadata.mjs"
     }
   },
   "main": "./index.cjs",
@@ -44,11 +50,8 @@
     }
   },
   "dependencies": {
-    "@coinbase/wallet-sdk": "^3.2.0",
-    "@wagmi/core": "0.3.7",
-    "@walletconnect/ethereum-provider": "^1.7.8",
-    "ethers": "^5.6.5",
-    "vue-demi": "*"
-
+    "@vethers/core": "workspace:*",
+    "vue-demi": "*",
+    "vue-query": "1.25.0"
   }
 }
