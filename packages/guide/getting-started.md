@@ -3,5 +3,5 @@
 ## Installation
 
 ```
-npm install vethers ethers
+npm install @vethers/core ethers
 ```
