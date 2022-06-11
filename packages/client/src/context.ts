@@ -1,5 +1,4 @@
-import { Fragment, defineComponent, h, onMounted, toRefs } from 'vue-demi'
-import { provide } from 'vue'
+import { Fragment, defineComponent, h, onMounted, provide, toRefs } from 'vue-demi'
 import type { Client } from './createClient'
 import { createClient } from './createClient'
 export const VethersContextKey = Symbol('VethersContext')

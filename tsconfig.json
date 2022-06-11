@@ -17,6 +17,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "noUnusedLocals": true,
+    "paths": {
+      "@vethers/core": ["./packages/core/index.ts"],
+      "@vethers/client": ["./packages/client/index.ts"]
+    },
     "types": [
       "vitest",
       "vitest/globals"
