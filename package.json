@@ -28,7 +28,7 @@
     "publish": "esno scripts/publish.ts",
     "prepare": "husky install",
     "prepublishOnly": "nr build",
-    "release": "esno scripts/release.ts && git push --follow-tags",
+    "release": "esno scripts/release.ts && git push --follow-tags && pnpm run publish",
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
