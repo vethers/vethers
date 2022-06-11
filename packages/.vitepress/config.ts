@@ -58,7 +58,7 @@ function commonSlidebar() {
 function sidebarGuide() {
   return [
     {
-      text: 'Introduction',
+      text: 'Getting Started',
       link: '/guide/getting-started',
     },
     {

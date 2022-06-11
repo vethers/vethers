@@ -1,11 +1,7 @@
 <p align="center">
-  <img align="middle" src="https://raw.githubusercontent.com/vethers/vethers/4318d5ce1c14d67282c23e6f8d7a84e993793ef3/packages/public/logo.svg" alt="vethers" width="100">
-  <h1 align="center">vethers</h1>
+  <img align="middle" src="https://raw.githubusercontent.com/vethers/vethers/main/packages/public/logo-with-name.png" alt="vethers" width="400">
 </p>
 
-<p align="center">
-  <h2 align="center">Vue Hooks for Ethereum</h2>
-</p>
 
 ## 📎 Installation
 ```sh
