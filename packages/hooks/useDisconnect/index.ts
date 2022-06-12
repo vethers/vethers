@@ -17,7 +17,7 @@ export interface UseDisconnectConfig {
   onSuccess?: (context: unknown) => void | Promise<unknown>
 }
 
-export const mutationKey = [{ entity: 'disconnect' }]
+export const disconnectMutationKey = [{ entity: 'disconnect' }]
 
 const mutationFn = () => disconnect()
 export function useDisconnect({
@@ -37,7 +37,7 @@ export function useDisconnect({
     mutateAsync: disconnectAsync,
     reset,
     status,
-  } = useMutation<void, Error>(mutationKey, mutationFn, {
+  } = useMutation<void, Error>(disconnectMutationKey, mutationFn, {
     ...(onError
       ? {
           onError(error, _variables, context) {

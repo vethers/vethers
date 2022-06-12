@@ -74,6 +74,26 @@ importers:
       vitest: 0.12.10_jsdom@19.0.0
       vue: 3.2.37
 
+  documents:
+    specifiers:
+      '@vethers/client': workspace:*
+      '@vethers/core': workspace:*
+      '@vethers/hooks': workspace:*
+      typescript: ^4.7.3
+      unbuild: ^0.7.4
+      unocss: ^0.38.2
+      vite: ^2.9.9
+      vitepress: 1.0.0-alpha.1
+    devDependencies:
+      '@vethers/client': link:../packages/client
+      '@vethers/core': link:../packages/core
+      '@vethers/hooks': link:../packages/hooks
+      typescript: 4.7.3
+      unbuild: 0.7.4
+      unocss: 0.38.2_vite@2.9.12
+      vite: 2.9.12
+      vitepress: 1.0.0-alpha.1
+
   packages/client:
     specifiers:
       '@vethers/core': workspace:*
@@ -7026,7 +7046,7 @@ packages:
     dev: false
 
   github.com/ethereumjs/ethereumjs-abi/ee3994657fa7a427238e6ba92a84d0b529bbcde0:
-    resolution: {tarball: https://codeload.github.com/ethereumjs/ethereumjs-abi/tar.gz/ee3994657fa7a427238e6ba92a84d0b529bbcde0}
+    resolution: {commit: ee3994657fa7a427238e6ba92a84d0b529bbcde0, repo: git+ssh://git@github.com/ethereumjs/ethereumjs-abi.git, type: git}
     name: ethereumjs-abi
     version: 0.6.8
     dependencies:

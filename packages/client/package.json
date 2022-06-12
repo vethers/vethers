@@ -21,22 +21,16 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "require": "./index.cjs",
-      "import": "./index.mjs"
-    },
-    "./*": "./*",
-    "./metadata": {
-      "types": "./metadata.d.ts",
-      "require": "./metadata.cjs",
-      "import": "./metadata.mjs"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     }
   },
-  "main": "./index.cjs",
-  "module": "./index.mjs",
-  "unpkg": "./index.iife.min.js",
-  "jsdelivr": "./index.iife.min.js",
-  "types": "./index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.iife.min.js",
+  "jsdelivr": "./dist/index.iife.min.js",
+  "types": "./dist/index.d.ts",
   "peerDependencies": {
     "@vue/composition-api": "^1.2.0",
     "vue": "^2.6.0 || ^3.2.0"

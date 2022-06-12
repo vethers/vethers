@@ -1,0 +1,32 @@
+{
+  "name": "@vethers/documents",
+  "version": "0.0.5",
+  "private": true,
+  "description": "",
+  "author": "MuRong <admin@imuboy.cn>",
+  "license": "MIT",
+  "homepage": "https://github.com/vethers/vethers#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vethers/vethers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vethers/vethers/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev --open",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "@vethers/client": "workspace:*",
+    "@vethers/core": "workspace:*",
+    "@vethers/hooks": "workspace:*",
+    "typescript": "^4.7.3",
+    "unbuild": "^0.7.4",
+    "unocss": "^0.38.2",
+    "vite": "^2.9.9",
+    "vitepress": "1.0.0-alpha.1"
+  }
+}

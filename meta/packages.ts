@@ -30,4 +30,9 @@ export const packages: PackageManifest[] = [
     display: 'VethersHooks',
     iife: false,
   },
+  {
+    name: 'client',
+    display: 'VethersClient',
+    iife: false,
+  },
 ]

@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-import { useConnect } from '../useConnect/index'
-import { useDisconnect } from '.'
+import { useConnect } from '@vethers/hooks'
 const { connectors, connect, activeConnector, isConnecting, pendingConnector } = useConnect()
-const { disconnect } = useDisconnect()
 
 </script>
 <template>
-  <button v-if="activeConnector" @click="disconnect">
+  <button v-if="activeConnector">
     Disconnect from {{ activeConnector?.name }}
   </button>
   <div v-for="conn in connectors" :key="conn.id" @click="connect(conn)">
