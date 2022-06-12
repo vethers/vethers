@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import { VethersConfig } from '@vethers/client'
 import App from './app.vue'
-import { VethersConfig } from './index'
 
 </script>
 

@@ -8,8 +8,6 @@
     "strict": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
-    "declaration": true,
-    "declarationDir": "./types",
     "resolveJsonModule": true,
     "rootDir": ".",
     "baseUrl": ".",
@@ -42,3 +40,18 @@
     "packages/_docs"
   ]
 }
+
+// {
+//   "compilerOptions": {
+//     "target": "es2017",
+//     "module": "esnext",
+//     "lib": ["esnext"],
+//     "moduleResolution": "node",
+//     "esModuleInterop": true,
+//     "strict": true,
+//     "strictNullChecks": true,
+//     "resolveJsonModule": true,
+//     "skipLibCheck": true,
+//     "skipDefaultLibCheck": true
+//   }
+// }

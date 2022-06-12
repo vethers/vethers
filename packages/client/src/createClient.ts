@@ -41,7 +41,7 @@ export function createClient<
     storage: window.localStorage,
     key: 'vethers',
   })
-  // delete storage['wagmi.store']
+
   const defaultConfigs: ClientConfig<TProvider, TWebSocketProvider> = {
     storage,
     ...config,

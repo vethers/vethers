@@ -1,9 +1,9 @@
 import type {
+  Client,
   Provider,
   WebSocketProvider,
 } from '@vethers/core'
 import { inject } from 'vue-demi'
-import type { Client } from '@vethers/client'
 import { VethersContextKey } from '@vethers/client'
 export function useClient<
   TProvider extends Provider,
@@ -13,9 +13,9 @@ export function useClient<
     TWebSocketProvider
   > {
   const client = inject<Client<
-    TProvider,
-    TWebSocketProvider
-  >>(VethersContextKey)
+  TProvider,
+  TWebSocketProvider
+>>(VethersContextKey)
   if (!client) {
     throw new Error(
       [

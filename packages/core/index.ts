@@ -23,6 +23,9 @@ export {
   SwitchChainNotSupportedError,
   UserRejectedRequestError,
   createClient,
+  getAccount,
+  watchAccount,
+  connect,
 } from '@wagmi/core'
 export type {
   Chain,
@@ -34,6 +37,9 @@ export type {
   ClientConfig,
   Provider,
   WebSocketProvider,
+  GetAccountResult,
+  ConnectResult,
+  ConnectArgs,
 } from '@wagmi/core'
 export * from '@wagmi/core/chains'
 export * from '@wagmi/core/connectors/coinbaseWallet'

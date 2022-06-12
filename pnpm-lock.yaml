@@ -100,13 +100,23 @@ importers:
 
   packages/hooks:
     specifiers:
+      '@coinbase/wallet-sdk': ^3.2.0
       '@vethers/client': workspace:*
       '@vethers/core': workspace:*
+      '@wagmi/core': 0.3.7
+      '@walletconnect/ethereum-provider': ^1.7.8
+      ethers: 5.6.8
       vue-demi: 0.12.5
+      vue-query: 1.25.0
     dependencies:
+      '@coinbase/wallet-sdk': 3.2.0
       '@vethers/client': link:../client
       '@vethers/core': link:../core
+      '@wagmi/core': 0.3.7_xef66b7fj4ubtncrawyhy2oeri
+      '@walletconnect/ethereum-provider': 1.7.8
+      ethers: 5.6.8
       vue-demi: 0.12.5
+      vue-query: 1.25.0
 
   packages/vethers:
     specifiers: {}
