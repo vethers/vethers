@@ -22,11 +22,14 @@ export {
   SwitchChainError,
   SwitchChainNotSupportedError,
   UserRejectedRequestError,
-  createClient,
   getAccount,
   watchAccount,
   connect,
+  disconnect,
+  createClient,
+  InjectedConnector,
 } from '@wagmi/core'
+
 export type {
   Chain,
   ChainProvider,

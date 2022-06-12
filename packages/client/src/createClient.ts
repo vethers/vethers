@@ -44,6 +44,7 @@ export function createClient<
 
   const defaultConfigs: ClientConfig<TProvider, TWebSocketProvider> = {
     storage,
+    autoConnect: true,
     ...config,
   }
   const client = createVanillaClient<TProvider, TWebSocketProvider>(defaultConfigs)
