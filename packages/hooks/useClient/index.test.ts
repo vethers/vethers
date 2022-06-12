@@ -49,7 +49,7 @@ describe('useClient', () => {
           client,
           load: () => {
             const client = useClient()
-            expect(client.config.autoConnect).toBeFalsy()
+            expect(client.config.autoConnect).toBeTruthy()
             // expect(client.config.autoConnect).toBeFalsy()
           },
         },
