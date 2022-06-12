@@ -17,7 +17,6 @@ importers:
       '@types/fs-extra': ^9.0.13
       '@types/node': ^17.0.35
       '@vue/test-utils': ^2.0.0-rc.21
-      '@wagmi/core': 0.3.7
       bumpp: ^7.1.1
       consola: ^2.15.3
       cross-env: ^7.0.3
@@ -41,8 +40,6 @@ importers:
       vitepress: 1.0.0-alpha.1
       vitest: ^0.12.9
       vue: ^3.2.31
-    dependencies:
-      '@wagmi/core': 0.3.7
     devDependencies:
       '@babel/types': 7.18.4
       '@murongg/eslint-config': 0.1.2_ud6rd4xtew5bv4yhvkvu24pzm4
@@ -120,21 +117,13 @@ importers:
 
   packages/hooks:
     specifiers:
-      '@coinbase/wallet-sdk': ^3.2.0
       '@vethers/client': workspace:*
       '@vethers/core': workspace:*
-      '@wagmi/core': 0.3.7
-      '@walletconnect/ethereum-provider': ^1.7.8
-      ethers: 5.6.8
       vue-demi: 0.12.5
       vue-query: 1.25.0
     dependencies:
-      '@coinbase/wallet-sdk': 3.2.0
       '@vethers/client': link:../client
       '@vethers/core': link:../core
-      '@wagmi/core': 0.3.7_xef66b7fj4ubtncrawyhy2oeri
-      '@walletconnect/ethereum-provider': 1.7.8
-      ethers: 5.6.8
       vue-demi: 0.12.5
       vue-query: 1.25.0
 
@@ -1693,25 +1682,6 @@ packages:
       vue: 3.2.37
       vue-demi: 0.12.5_vue@3.2.37
     dev: true
-
-  /@wagmi/core/0.3.7:
-    resolution: {integrity: sha512-RJAaypcQK0OA/ezpgNz4Smk4rUUMf9IXapLR2PtDLUWjJxI2Xw5l+Pq4t6xOvJt6fNO1GKM0iRjUaUN37py0+w==}
-    peerDependencies:
-      '@coinbase/wallet-sdk': '>=3.2.0'
-      '@walletconnect/ethereum-provider': '>=1.7.5'
-      ethers: '>=5.5.1'
-    peerDependenciesMeta:
-      '@coinbase/wallet-sdk':
-        optional: true
-      '@walletconnect/ethereum-provider':
-        optional: true
-    dependencies:
-      eventemitter3: 4.0.7
-      zustand: 4.0.0-rc.1
-    transitivePeerDependencies:
-      - immer
-      - react
-    dev: false
 
   /@wagmi/core/0.3.7_xef66b7fj4ubtncrawyhy2oeri:
     resolution: {integrity: sha512-RJAaypcQK0OA/ezpgNz4Smk4rUUMf9IXapLR2PtDLUWjJxI2Xw5l+Pq4t6xOvJt6fNO1GKM0iRjUaUN37py0+w==}

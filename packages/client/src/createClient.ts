@@ -5,7 +5,7 @@ import type {
   WebSocketProvider,
 } from '@vethers/core'
 import {
-  createStorage,
+  // createStorage,
   createClient as createVanillaClient,
 } from '@vethers/core'
 import { QueryClient } from 'vue-query'
@@ -37,13 +37,13 @@ export function createClient<
   queryClient = defaultQueryClient,
   ...config
 }: CreateClientConfig<TProvider, TWebSocketProvider> = {}) {
-  const storage = createStorage({
-    storage: window.localStorage,
-    key: 'vethers',
-  })
+  // const storage = createStorage({
+  //   storage: window && window.localStorage,
+  //   key: 'vethers',
+  // })
 
   const defaultConfigs: ClientConfig<TProvider, TWebSocketProvider> = {
-    storage,
+    // storage,
     autoConnect: true,
     ...config,
   }

@@ -34,9 +34,6 @@
     "typecheck": "tsc --noEmit",
     "types:fix": "esno scripts/fix-types.ts"
   },
-  "dependencies": {
-    "@wagmi/core": "0.3.7"
-  },
   "devDependencies": {
     "@babel/types": "^7.17.0",
     "@murongg/eslint-config": "^0.1.2",
