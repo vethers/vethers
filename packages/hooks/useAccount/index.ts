@@ -36,6 +36,7 @@ export function useAccount({
   watchEffect(() => {
     const unwatch = watchAccount((data: GetAccountResult) => {
       queryClient.setQueryData(queryKey(), data?.address ? data : null)
+      accountQuery.refetch.value()
     })
     return unwatch
   })
