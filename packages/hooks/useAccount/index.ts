@@ -1,4 +1,4 @@
-import { watch } from 'vue-demi'
+import { watchEffect } from 'vue-demi'
 import type { GetAccountResult } from '@vethers/core'
 import { getAccount, watchAccount } from '@vethers/core'
 import { useQuery, useQueryClient } from 'vue-query'
@@ -33,11 +33,11 @@ export function useAccount({
     onSettled,
     onSuccess,
   })
-
-  watch(queryClient, () => {
-    watchAccount((data: GetAccountResult) => {
+  watchEffect(() => {
+    const unwatch = watchAccount((data: GetAccountResult) => {
       queryClient.setQueryData(queryKey(), data?.address ? data : null)
     })
+    return unwatch
   })
 
   return accountQuery
