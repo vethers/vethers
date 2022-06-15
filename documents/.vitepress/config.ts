@@ -1,5 +1,5 @@
 import { join } from 'path'
-import { readdirSync, statSync } from 'fs'
+import { readdirSync } from 'fs'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 const nav: DefaultTheme.NavItem[] = [
@@ -73,12 +73,10 @@ function sidebarHooks() {
   const hooksPath = join(__dirname, '../hooks')
   const dirs = readdirSync(hooksPath)
   for (const dir of dirs) {
-    const dirPath = join(hooksPath, dir)
-    const isDirectory = statSync(dirPath).isDirectory()
-    if (isDirectory && !dir.indexOf('use')) {
+    if (!dir.indexOf('use')) {
       sliebars.push({
         text: dir,
-        link: `/hooks/${dir}/index.html`,
+        link: `/hooks/${dir}.html`,
       })
     }
   }
