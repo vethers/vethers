@@ -1,13 +1,20 @@
-import type { UseMutationOptions } from 'vue-query'
+import type { UseMutationOptions, UseMutationReturnType } from 'vue-query'
 import { useMutation } from 'vue-query'
 import type { ConnectArgs, ConnectResult } from '@vethers/core'
 import { Connector, connect } from '@vethers/core'
-import { ref, toRaw, watch, watchEffect } from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 import { useClient } from '../useClient'
-import { useForceUpdate } from '../utils'
 
 export type UseConnectArgs = Partial<ConnectArgs>
 type MutationOptions = UseMutationOptions<ConnectResult, Error, ConnectArgs, ''>
+
+export type UseMutationResult<
+  TData = unknown,
+  TError = unknown,
+  TVariables = unknown,
+  TContext = unknown,
+  > = UseMutationReturnType<TData, TError, TVariables, TContext>
+
 export interface UseConnectConfig {
   /** Chain to connect */
   chainId?: number
@@ -45,9 +52,8 @@ export function useConnect({
   onSettled,
 }: UseConnectArgs & UseConnectConfig = {}) {
   const client = useClient()
-  const forceUpdate = useForceUpdate()
 
-  const activeConnector = ref<Connector | undefined>(client.connector)
+  const activeConnector = ref<Connector | undefined>(client.value.connector)
   const { data, error, mutate, mutateAsync, reset, status, variables }
     = useMutation(mutationKey({ connector, chainId }), mutationFn, {
       onError,
@@ -55,27 +61,6 @@ export function useConnect({
       onSettled,
       onSuccess: onConnect,
     })
-
-  watchEffect(() => {
-    const unsubscribe = client.subscribe(
-      (state) => {
-        activeConnector.value = state.connector
-        return {
-          connector: state.connector,
-          connectors: state.connectors,
-          status: state.status,
-        }
-      },
-      forceUpdate,
-      {
-        equalityFn: (selected, previous) =>
-          selected.connector === previous.connector
-          && selected.connectors === previous.connectors
-          && selected.status === previous.status,
-      },
-    )
-    return unsubscribe
-  })
 
   const commonConnect = (connectorOrArgs?: Partial<ConnectArgs> | ConnectArgs['connector']) => {
     let config: Partial<ConnectArgs>
@@ -100,37 +85,39 @@ export function useConnect({
     const config = commonConnect(connectorOrArgs)
     return mutate(<ConnectArgs>config)
   }
-  watch(() => [chainId, connector, mutate], () => {
-    return connect()
-  })
 
   const connectAsync = (connectorOrArgs?: Partial<ConnectArgs> | ConnectArgs['connector']) => {
     const config = commonConnect(connectorOrArgs)
     return mutateAsync(<ConnectArgs>config)
   }
-  watch(() => [chainId, connector, mutateAsync], () => {
-    return connect()
+
+  const status_ = computed(() => {
+    let result:
+    | 'error' | 'idle' | 'loading' | 'success'
+    | Extract<UseMutationResult['status'], 'error' | 'idle'>
+    | 'connected'
+    | 'connecting'
+    | 'disconnected'
+    | 'reconnecting'
+
+    if (client.value.status === 'reconnecting')
+      result = 'reconnecting'
+    else if (status.value === 'loading' || client.value.status === 'connecting')
+      result = 'connecting'
+    else if (client.value.connector)
+      result = 'connected'
+    else if (!client.value.connector || status.value === 'success')
+      result = 'disconnected'
+    else result = status.value
+
+    return result
   })
-
-  let status_ = ref<UseConnectReturnStatus>()
-  if (client.status === 'reconnecting')
-    status_.value = 'reconnecting'
-  else if (status.value === 'loading' || client.status === 'connecting')
-    status_.value = 'connecting'
-  else if (client.connector)
-    status_.value = 'connected'
-
-  else if (!client.connector || status.value === 'success')
-    status_.value = 'disconnected'
-
-  else
-    status_ = status
 
   return {
     activeConnector,
     connect,
     connectAsync,
-    connectors: toRaw(client).connectors,
+    connectors: client.value.connectors,
     data,
     error,
     isConnected: status_.value === 'connected',

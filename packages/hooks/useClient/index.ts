@@ -1,25 +1,13 @@
-import type {
-  Client,
-  Provider,
-  WebSocketProvider,
+import {
+  VethersContextKey,
 } from '@vethers/core'
 import { inject } from 'vue-demi'
-import { VethersContextKey } from '@vethers/client'
-export function useClient<
-  TProvider extends Provider,
-  TWebSocketProvider extends WebSocketProvider = WebSocketProvider,
-  >(): Client<
-    TProvider,
-    TWebSocketProvider
-  > {
-  const client = inject<Client<
-  TProvider,
-  TWebSocketProvider
->>(VethersContextKey)
+export function useClient() {
+  const client = inject(VethersContextKey)
   if (!client) {
     throw new Error(
       [
-        '`useClient` must be used within `VethersConfig`.\n',
+        '`useClient` must be used within `VethersPlugin`.\n',
       ].join('\n'),
     )
   }

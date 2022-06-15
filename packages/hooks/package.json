@@ -44,7 +44,6 @@
     }
   },
   "dependencies": {
-    "@vethers/client": "workspace:*",
     "@vethers/core": "workspace:*",
     "vue-demi": "*",
     "vue-query": "1.25.0"

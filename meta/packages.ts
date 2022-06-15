@@ -24,15 +24,27 @@ export const packages: PackageManifest[] = [
     name: 'core',
     display: 'Vethers',
     iife: false,
+    external: [
+      'vue',
+      'vue-query',
+      '@wagmi/core',
+      '@wagmi/core/chains',
+      '@wagmi/core/connectors/coinbaseWallet',
+      '@wagmi/core/connectors/metaMask',
+      '@wagmi/core/connectors/mock',
+      '@wagmi/core/connectors/walletConnect',
+      '@wagmi/core/providers/alchemy',
+      '@wagmi/core/providers/infura',
+      '@wagmi/core/providers/jsonRpc',
+      '@wagmi/core/providers/public',
+    ],
   },
   {
     name: 'hooks',
     display: 'VethersHooks',
     iife: false,
-  },
-  {
-    name: 'client',
-    display: 'VethersClient',
-    iife: false,
+    external: [
+      'vue-query',
+    ],
   },
 ]
