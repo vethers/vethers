@@ -74,9 +74,10 @@ function sidebarHooks() {
   const dirs = readdirSync(hooksPath)
   for (const dir of dirs) {
     if (!dir.indexOf('use')) {
+      const name = dir.split('.md')[0]
       sliebars.push({
-        text: dir,
-        link: `/hooks/${dir}.html`,
+        text: name,
+        link: `/hooks/${name}.html`,
       })
     }
   }
