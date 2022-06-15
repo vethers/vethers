@@ -20,9 +20,6 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "@vethers/client": "workspace:*",
-    "@vethers/core": "workspace:*",
-    "@vethers/hooks": "workspace:*",
     "typescript": "^4.7.3",
     "unbuild": "^0.7.4",
     "unocss": "^0.38.2",
